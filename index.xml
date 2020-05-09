@@ -6,9 +6,19 @@
     <description>Recent content on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 10 May 2020 01:21:27 +0800</lastBuildDate>
     
 	<atom:link href="https://xrch.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Second</title>
+      <link>https://xrch.github.io/post/</link>
+      <pubDate>Sun, 10 May 2020 01:21:27 +0800</pubDate>
+      
+      <guid>https://xrch.github.io/post/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29  #!/bin/bash  ROOT_UID=0 E_NOTROOT=85 if [ &amp;#34;$UID&amp;#34; -ne &amp;#34;$ROOT_UID&amp;#34; ] then echo &amp;#34;Must be root to run this script.&amp;#34; exit $E_NOTROOT fi export PATH=/sbin:/bin:/usr/sbin:/usr/bin source /scripts/function.sh if grep &amp;#34; 6\.[0-9]&amp;#34; /etc/centos-release &amp;amp;&amp;gt;/dev/null; then CentOS6_optimization elif grep &amp;#34; 7\.[0-9]&amp;#34; /etc/centos-release &amp;amp;&amp;gt;/dev/null; then CentOS7_optimization yum -y install iptables-services &amp;amp;&amp;gt;/dev/null systemctl stop iptables.</description>
+    </item>
     
   </channel>
 </rss>

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://xrch.github.io/sitemap.xml

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CentOS_function - 心若藏海</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="心若藏海" /><meta name="description" content=" 系统初始化函数库
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.70.0 with theme even" />
+
+
+<link rel="canonical" href="https://xrch.github.io/post/centos_function/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.4eb71590ad024de2ebb1b5eef94cbb645b7e63e6b9c4c837355530a75e112ce1.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="CentOS_function" />
+<meta property="og:description" content="
+系统初始化函数库
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xrch.github.io/post/centos_function/" />
+<meta property="article:published_time" content="2020-05-10T18:44:53+08:00" />
+<meta property="article:modified_time" content="2020-05-10T18:44:53+08:00" />
+<meta itemprop="name" content="CentOS_function">
+<meta itemprop="description" content="
+系统初始化函数库
+">
+<meta itemprop="datePublished" content="2020-05-10T18:44:53&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-10T18:44:53&#43;08:00" />
+<meta itemprop="wordCount" content="881">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CentOS_function"/>
+<meta name="twitter:description" content="
+系统初始化函数库
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">xrch</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">文章</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">xrch</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">文章</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">CentOS_function</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-10 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>系统初始化函数库</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="c1"># location /scripts/function.sh</span>
+
+<span class="c1"># The generic function</span>
+general<span class="o">()</span> <span class="o">{</span>
+    hosts
+    dns_cfg
+    close_selinux
+    time_zone
+    time_sync
+    login_prompt
+    <span class="nb">command</span>
+    swap_use
+    open_files
+    install_package
+<span class="o">}</span>
+
+CentOS6_optimization<span class="o">()</span> <span class="o">{</span>
+    close_6_firewall
+    close_6_NetworkManager
+    6_lan_code
+    6_ssh_cfg
+    6_alias
+    CentOS6_local_yum
+<span class="o">}</span>
+
+CentOS7_optimization<span class="o">()</span> <span class="o">{</span>
+    close_7_firewall
+    close_7_NetworkManager
+    7_lan_code
+    7_ssh_cfg
+    7_alias
+    CentOS7_local_yum
+    modify_network_name
+<span class="o">}</span>
+
+
+<span class="c1"># Write the hostname to hosts</span>
+hosts<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">ip_addr</span><span class="o">=</span><span class="k">$(</span>hostname -I <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span>
+    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$ip_addr</span><span class="s2"> `hostname`&#34;</span> &gt;&gt;/etc/hosts
+<span class="o">}</span>
+
+<span class="c1"># Writes the DNS address to /etc/resolv.conf</span>
+dns_cfg<span class="o">()</span> <span class="o">{</span>
+cat &gt;&gt; /etc/resolv.conf <span class="s">&lt;&lt;EOF
+</span><span class="s">nameserver 223.5.5.5
+</span><span class="s">nameserver 114.114.114.114
+</span><span class="s">EOF</span>
+<span class="o">}</span>
+
+<span class="c1"># Disable selinux</span>
+close_selinux<span class="o">()</span> <span class="o">{</span>
+    setenforce <span class="m">0</span>
+    sed -i <span class="s1">&#39;/^SELINUX=/{s#.*#SELINUX=disabled#}&#39;</span> /etc/selinux/config
+<span class="o">}</span>
+
+<span class="c1"># Close the firewall</span>
+close_7_firewall<span class="o">()</span> <span class="o">{</span>
+    systemctl stop firewalld
+    systemctl disable firewalld <span class="p">&amp;</span>&gt;/dev/null
+<span class="o">}</span>
+
+close_6_firewall<span class="o">()</span> <span class="o">{</span>
+    /etc/init.d/iptables stop <span class="p">&amp;</span>&gt;/dev/null
+    chkconfig iptables off
+<span class="o">}</span>
+
+<span class="c1"># Close NetworkManager</span>
+close_7_NetworkManager<span class="o">()</span> <span class="o">{</span>
+    systemctl stop NetworkManager <span class="p">&amp;</span>&gt;/dev/null
+    systemctl disable NetworkManager <span class="p">&amp;</span>&gt;/dev/null
+<span class="o">}</span>
+
+close_6_NetworkManager<span class="o">()</span> <span class="o">{</span>
+    /etc/init.d/NetworkManager stop <span class="p">&amp;</span>&gt;/dev/null
+    chkconfig NetworkManager off <span class="p">&amp;</span>&gt;/dev/null
+<span class="o">}</span>
+
+<span class="c1"># Set the time zone and time_sync</span>
+time_zone<span class="o">()</span> <span class="o">{</span>
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+<span class="o">}</span>
+
+time_sync<span class="o">()</span> <span class="o">{</span>
+    hwclock -w --localtime
+    <span class="nb">echo</span> <span class="s2">&#34;*/10 * * * * /usr/sbin/ntpdate ntp1.aliyun.com &amp;&gt;/dev/null; /sbin/hwclock -w&#34;</span> <span class="p">|</span> crontab
+<span class="o">}</span>
+
+<span class="c1"># Set the language and encoding</span>
+6_lan_code<span class="o">()</span> <span class="o">{</span>
+   sed -i <span class="s1">&#39;/^LANG/ c LANG=en_US.UTF-8&#39;</span> /etc/sysconfig/i18n
+<span class="o">}</span>
+
+7_lan_code<span class="o">()</span> <span class="o">{</span>
+    localectl set-locale <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="o">}</span>
+
+<span class="c1"># SSH optimization</span>
+6_ssh_cfg<span class="o">()</span> <span class="o">{</span>
+    sed -i <span class="s1">&#39;/^GSSAPIAuthentication/s/yes/no/&#39;</span> /etc/ssh/sshd_config
+    sed -i <span class="s1">&#39;/^#UseDNS/c UseDNS no&#39;</span> /etc/ssh/sshd_config
+    /etc/init.d/sshd reload <span class="p">&amp;</span>&gt;/dev/null
+<span class="o">}</span>
+
+7_ssh_cfg<span class="o">()</span> <span class="o">{</span>
+    sed -i <span class="s1">&#39;/^GSSAPIAuthentication/s/yes/no/&#39;</span> /etc/ssh/sshd_config
+    sed -i <span class="s1">&#39;/^#UseDNS/c UseDNS no&#39;</span> /etc/ssh/sshd_config
+    systemctl reload sshd 
+<span class="o">}</span>
+
+<span class="c1"># Turn off the login prompt</span>
+login_prompt<span class="o">()</span> <span class="o">{</span>
+    &gt; /etc/issue
+    &gt; /etc/issue.net
+<span class="o">}</span>
+
+<span class="c1"># Displays the history command time and Command Prompt</span>
+command<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">echo</span> <span class="s1">&#39;export HISTTIMEFORMAT=&#34;%F %T `whoami` --&gt; &#34;&#39;</span> &gt;&gt;/etc/profile
+    <span class="nb">echo</span> <span class="s1">&#39;PS1=&#34;\[\e[34;40m\][\u@\h \t \w]\\$ \[\e[0m\]&#34;&#39;</span> &gt; /etc/profile.d/PS1.sh
+<span class="o">}</span>
+
+
+<span class="c1"># The alias optimization</span>
+6_alias<span class="o">()</span> <span class="o">{</span>
+cat &gt;&gt;/etc/profile.d/alias.sh<span class="s">&lt;&lt;EOF
+</span><span class="s">alias grep=&#39;grep --color=auto&#39; 2&gt;/dev/null
+</span><span class="s">alias egrep=&#39;egrep --color=auto&#39; 2&gt;/dev/null
+</span><span class="s">alias fgrep=&#39;fgrep --color=auto&#39; 2&gt;/dev/null
+</span><span class="s">alias vi=&#39;vim&#39; 2&gt;/dev/null
+</span><span class="s">EOF</span>
+<span class="o">}</span>
+
+7_alias<span class="o">()</span> <span class="o">{</span>
+cat &gt;&gt;/etc/profile.d/alias.sh<span class="s">&lt;&lt;EOF
+</span><span class="s">alias vi=&#39;vim&#39; 2&gt;/dev/null
+</span><span class="s">EOF</span>
+<span class="o">}</span>
+
+<span class="c1"># Reduce the use of swap</span>
+swap_use<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">&#34;10&#34;</span> &gt; /proc/sys/vm/swappiness
+    <span class="nb">echo</span> <span class="s2">&#34;vm.swappiness=10&#34;</span> &gt;&gt;/etc/sysctl.conf
+<span class="o">}</span>
+
+<span class="c1"># Sets the maximum number of open files</span>
+open_files<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">ulimit</span> -n <span class="m">65535</span>
+cat &gt;&gt; /etc/security/limits.conf <span class="s">&lt;&lt;EOF
+</span><span class="s">* soft nofile 65535
+</span><span class="s">* hard nofile 65535
+</span><span class="s">EOF</span>
+<span class="o">}</span>
+
+<span class="c1"># Use local yum source</span>
+CentOS6_local_yum<span class="o">()</span>
+<span class="o">{</span>
+<span class="k">if</span> <span class="o">[</span> -b /dev/sr1 <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+mkdir /media/cdrom<span class="o">{</span>1,2<span class="o">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;/dev/sr0 /media/cdrom1 iso9660 defaults 0 0&#34;</span> &gt;&gt;/etc/fstab
+<span class="nb">echo</span> <span class="s2">&#34;/dev/sr1 /media/cdrom2 iso9660 defaults 0 0&#34;</span> &gt;&gt;/etc/fstab
+
+<span class="nb">cd</span> /etc/yum.repos.d/ <span class="o">&amp;&amp;</span> mkdir repo_bak <span class="o">&amp;&amp;</span> mv *.repo repo_bak
+
+cat &gt;&gt;/etc/yum.repos.d/CentOS6-local.repo <span class="s">&lt;&lt;EOF
+</span><span class="s">[CentOS6-local]
+</span><span class="s">name=CentOS6
+</span><span class="s">baseurl=file:///media/cdrom1
+</span><span class="s">        file:///media/cdrom2
+</span><span class="s">enabled=1
+</span><span class="s">gpgcheck=0
+</span><span class="s">EOF</span>
+
+<span class="k">else</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;/dev/sr0 /media iso9660 defaults 0 0&#34;</span> &gt;&gt;/etc/fstab
+<span class="nb">cd</span> /etc/yum.repos.d/ <span class="o">&amp;&amp;</span> mkdir repo_bak <span class="o">&amp;&amp;</span> mv *.repo repo_bak
+cat &gt;&gt;/etc/yum.repos.d/CentOS6-local.repo <span class="s">&lt;&lt;EOF
+</span><span class="s">[CentOS6-local]
+</span><span class="s">name=CentOS6
+</span><span class="s">baseurl=file:///media/
+</span><span class="s">enabled=1
+</span><span class="s">gpgcheck=0
+</span><span class="s">EOF</span>
+<span class="k">fi</span>
+
+mount -a <span class="p">&amp;</span>&gt;/dev/null
+yum clean all <span class="p">&amp;</span>&gt;/dev/null
+yum makecache <span class="p">&amp;</span>&gt;/dev/null
+<span class="o">}</span>
+
+CentOS7_local_yum<span class="o">()</span>
+<span class="o">{</span>
+<span class="nb">echo</span> <span class="s2">&#34;/dev/sr0 /media iso9660 defaults 0 0&#34;</span> &gt;&gt;/etc/fstab
+mount -a <span class="p">&amp;</span>&gt;/dev/null
+
+<span class="nb">cd</span> /etc/yum.repos.d/ <span class="o">&amp;&amp;</span> mkdir repo_bak <span class="o">&amp;&amp;</span> mv *.repo repo_bak
+
+cat &gt;&gt;/etc/yum.repos.d/CentOS7-local.repo <span class="s">&lt;&lt;EOF
+</span><span class="s">[CentOS7-local]
+</span><span class="s">name=CentOS7
+</span><span class="s">baseurl=file:///media/
+</span><span class="s">enabled=1
+</span><span class="s">gpgcheck=0
+</span><span class="s">EOF</span>
+
+yum clean all <span class="p">&amp;</span>&gt;/dev/null
+yum makecache <span class="p">&amp;</span>&gt;/dev/null
+<span class="o">}</span>
+
+<span class="c1"># Use aliyun&#39;s source</span> 
+aliyun_source<span class="o">()</span> <span class="o">{</span>
+<span class="nb">cd</span> /etc/yum.repos.d/ <span class="o">&amp;&amp;</span> mkdir repo_bak <span class="o">&amp;&amp;</span> mv *.repo repo_bak
+
+<span class="k">if</span> grep <span class="s2">&#34; 7\.[0-9]&#34;</span> /etc/centos-release <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+    curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo <span class="p">&amp;</span>&gt;/dev/null
+    curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo <span class="p">&amp;</span>&gt;/dev/null
+<span class="k">elif</span> grep <span class="s2">&#34; 6\.[0-9]&#34;</span> /etc/centos-release <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+    curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repo <span class="p">&amp;</span>&gt;/dev/null
+    curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo <span class="p">&amp;</span>&gt;/dev/null
+<span class="k">fi</span>
+
+yum clean all <span class="p">&amp;</span>&gt;/dev/null
+yum makecache <span class="p">&amp;</span>&gt;/dev/null
+<span class="o">}</span>
+
+<span class="c1"># Installation maintenance installation package</span>
+install_package<span class="o">()</span> <span class="o">{</span>
+<span class="k">for</span> i in gcc gcc-c++ vim-enhanced sysstat net-tools wget ntpdate lsof bind-utils automake autoconf lrzsz cmake nmap dos2unix tree
+<span class="k">do</span>
+    <span class="k">if</span> ! rpm -q <span class="nv">$i</span> <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+        yum -y install <span class="nv">$i</span> <span class="p">&amp;</span>&gt;/dev/null
+    <span class="k">fi</span>
+<span class="k">done</span>
+<span class="o">}</span>
+
+<span class="c1"># Modify the network interface name for CentOS7_ens33</span>
+modify_network_name<span class="o">()</span> <span class="o">{</span>
+<span class="k">if</span> ip a <span class="p">|</span> grep ens33 <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+    cp /etc/default/grub /etc/default/grub.bak
+    cp /boot/grub2/grub.cfg /boot/grub2/grub.cfg.bak
+    sed -i <span class="s1">&#39;/GRUB_CMDLINE_LINUX/c GRUB_CMDLINE_LINUX=&#34;rhgb quiet net.ifnames=0 biosdevname=0&#34;&#39;</span> /etc/default/grub
+    <span class="nb">cd</span> /etc/sysconfig/network-scripts/ <span class="o">&amp;&amp;</span> mv ifcfg-ens33 ifcfg-eth0
+    sed -i <span class="s1">&#39;/DEVICE/c DEVICE=eth0&#39;</span> ifcfg-eth0
+    sed -i <span class="s1">&#39;/NAME/c NAME=eth0&#39;</span> ifcfg-eth0
+    grub2-mkconfig -o /boot/grub2/grub.cfg <span class="p">&amp;</span>&gt;/dev/null
+<span class="k">fi</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">心若藏海</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-05-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/centos_init_test/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">CentOS_init_test</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://xrch.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">心若藏海</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

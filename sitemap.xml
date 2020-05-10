@@ -37,14 +37,27 @@
   </url>
   
   <url>
-    <loc>https://xrch.github.io/post/about/</loc>
+    <loc>https://xrch.github.io/about/</loc>
     <lastmod>2020-01-01T20:43:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xrch.github.io/about/</loc>
+    <loc>https://xrch.github.io/about/about/</loc>
+    <lastmod>2020-01-01T20:43:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xrch.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xrch.github.io/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

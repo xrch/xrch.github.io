@@ -2,21 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>心若藏海</title>
-    <link>https://xrch.github.io/</link>
+    <link>https://xrch.github.io./</link>
     <description>Recent content on 心若藏海</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 May 2020 17:13:43 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 20:43:47 +0800</lastBuildDate>
     
-	<atom:link href="https://xrch.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xrch.github.io./index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About</title>
+      <link>https://xrch.github.io./post/about/about/</link>
+      <pubDate>Sun, 10 May 2020 20:43:47 +0800</pubDate>
+      
+      <guid>https://xrch.github.io./post/about/about/</guid>
+      <description>夏利坤 运维工程师</description>
+    </item>
+    
+    <item>
       <title>CentOS_system_init</title>
-      <link>https://xrch.github.io/post/centos_system_init/</link>
+      <link>https://xrch.github.io./post/centos_system_init/</link>
       <pubDate>Sun, 10 May 2020 18:45:18 +0800</pubDate>
       
-      <guid>https://xrch.github.io/post/centos_system_init/</guid>
+      <guid>https://xrch.github.io./post/centos_system_init/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;调用初始化函数库&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -24,10 +33,10 @@
     
     <item>
       <title>CentOS_init_test</title>
-      <link>https://xrch.github.io/post/centos_init_test/</link>
+      <link>https://xrch.github.io./post/centos_init_test/</link>
       <pubDate>Sun, 10 May 2020 18:45:03 +0800</pubDate>
       
-      <guid>https://xrch.github.io/post/centos_init_test/</guid>
+      <guid>https://xrch.github.io./post/centos_init_test/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;验证初始化是否成功&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -35,22 +44,13 @@
     
     <item>
       <title>CentOS_function</title>
-      <link>https://xrch.github.io/post/centos_function/</link>
+      <link>https://xrch.github.io./post/centos_function/</link>
       <pubDate>Sun, 10 May 2020 18:44:53 +0800</pubDate>
       
-      <guid>https://xrch.github.io/post/centos_function/</guid>
+      <guid>https://xrch.github.io./post/centos_function/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;系统初始化函数库&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://xrch.github.io/about/</link>
-      <pubDate>Sun, 10 May 2020 17:13:43 +0800</pubDate>
-      
-      <guid>https://xrch.github.io/about/</guid>
-      <description>夏利坤 运维工程师</description>
     </item>
     
   </channel>

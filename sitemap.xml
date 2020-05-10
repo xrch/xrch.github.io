@@ -2,20 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xrch.github.io/about/</loc>
-    <lastmod>2020-05-10T20:43:47+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xrch.github.io/</loc>
-    <lastmod>2020-05-10T20:43:47+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xrch.github.io/post/centos_system_init/</loc>
     <lastmod>2020-05-10T18:45:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -24,6 +10,13 @@
   
   <url>
     <loc>https://xrch.github.io/post/</loc>
+    <lastmod>2020-05-10T18:45:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xrch.github.io/</loc>
     <lastmod>2020-05-10T18:45:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -39,6 +32,13 @@
   <url>
     <loc>https://xrch.github.io/post/centos_function/</loc>
     <lastmod>2020-05-10T18:44:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xrch.github.io/post/about/</loc>
+    <lastmod>2020-01-01T20:43:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

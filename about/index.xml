@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on 心若藏海</title>
-    <link>https://xrch.github.io./about/</link>
+    <link>https://xrch.github.io/about/</link>
     <description>Recent content in About on 心若藏海</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://xrch.github.io./about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xrch.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
